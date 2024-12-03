@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    /* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f9fa;
+  color: #333;
+}
+
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+
+header {
+  background: #6C63FF;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+/* Main container */
+.contact-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6C63FF;
+  outline: none;
+}
+
+.submit-btn {
+  background: #6C63FF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background: #5754d3;
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="Home_page.html">Home</a></li>
+      <li><a href="gym_sports.html">Sports And Fitness</a></li>
+      <li><a href="Ceed.html">CEED</a></li>
+      <li><a href="herbal_garden.html">Botanical Garden</a></li>
+      <li><a href="Team_project.html">Mess</a></li>
+      <li><a href="events.html">Events</a></li>    
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="library.html">Library</a></li> 
+      <li><a href="Dispensary.html">Dispensary</a></li> 
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Feel free to reach out using the form below.</p>
+  </header>
+
+  <main>
+    <section class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Chitkara University. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

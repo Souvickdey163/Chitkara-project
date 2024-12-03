@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Chitkara University Botanical Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Advanced Animations and Keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes subtleRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes breatheEffect {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(45deg, #e0f2f1, #b2dfdb, #80cbc4);
+            background-size: 400% 400%;
+            color: #2c3e50;
+            overflow-x: hidden;
+            animation: gradientShift 15s ease infinite;
+            perspective: 1000px;
+        }
+
+        /* Header Section with Advanced Animations */
+        .sub-header {
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            padding: 20px 10%;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .sub-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                rgba(255,255,255,0.05) 0,
+                rgba(255,255,255,0.05) 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            animation: subtleRotate 60s linear infinite;
+            opacity: 0.3;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards 0.5s;
+            transform-style: preserve-3d;
+        }
+
+        .nav img {
+            transition: all 0.5s ease;
+            transform-origin: center;
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+
+        .nav img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .nav .nav-links ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            display: inline-block;
+        }
+
+        .nav .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: -5px;
+            left: 0;
+            background-color: #81c784;
+            transition: width 0.3s ease;
+        }
+
+        .nav .nav-links a:hover {
+            transform: scale(1.1) translateY(-3px);
+        }
+
+        .nav .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        h1 {
+            margin-top: 10px;
+            font-size: 2.5em;
+            color: white;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards 0.7s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Content Section with Enhanced Animations */
+        .content {
+            padding: 40px 10%;
+            text-align: justify;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards 1s;
+        }
+
+        .content h2 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #4CAF50;
+            padding-bottom: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background-color: #81c784;
+            transition: all 0.5s ease;
+            animation: slideIn 1.5s forwards 1.5s;
+        }
+
+        @keyframes slideIn {
+            to { left: 0; }
+        }
+
+        .content p {
+            font-size: 1.1em;
+            color: #34495e;
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards 1.5s;
+        }
+
+        /* Image Gallery with Advanced Interactions */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 10%;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+            transform-style: preserve-3d;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: calc(1s + var(--index) * 0.3s);
+        }
+
+        .image-card:hover {
+            transform: scale(1.05) rotateX(10deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            transform-origin: center;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1) rotate(3deg);
+            filter: brightness(110%) contrast(110%);
+        }
+
+        .image-card .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            font-size: 1em;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.5s ease;
+        }
+
+        .image-card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+            /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="Home_page.html">Home</a></li>
+          <li><a href="gym_sports.html">Sports And Fitness</a></li>
+          <li><a href="Ceed.html">CEED</a></li>
+          <li><a href="herbal_garden.html">Botanical Garden</a></li>
+          <li><a href="Team_project.html">Mess</a></li>
+          <li><a href="events.html">Events</a></li>    
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="library.html">Library</a></li> 
+          <li><a href="Dispensary.html">Dispensary</a></li> 
+          <li><a href="sculpture.html">Sculpture</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    <!-- Header Section with Enhanced Animations -->
+    <section class="sub-header">
+        <div class="nav">
+            <a href="home.html">
+                <img src="HP-Logo.webp" alt="Chitkara Logo">
+            </a>
+            <div class="nav-links">
+                <ul>
+                    <!-- <li><a href="Home_page.html">Home</a></li> -->
+                    <!-- <li><a href="course.html">COURSE</a></li> -->
+                    <!-- <li><a href="contact_us.html">CONTACT US</a></li> -->
+                    <!-- <li><a href="library2.html">LIBRARY</a></li> -->
+                    <!-- <li><a href="tour.html">TOUR</a></li> -->
+                    <!-- <li><a href="ceed.html">CEED</a></li> -->
+                    <!-- <li><a href="bitonical.html">BITONICAL GARDEN</a></li> -->
+                    <!-- <li><a href="event.html">EVENT</a></li> -->
+                </ul>
+            </div>
+        </div>
+        <h1>About Us</h1>     
+    </section>
+
+    <!-- Botanical Garden Section with Enhanced Transitions -->
+    <section class="content">
+        <h2>Explore The CEED</h2>
+        <p>
+            Chitkara University, Himachal Pradesh’s Centre for Entrepreneurship Education & Development (CEED), is poised to make a mark as it embarks on a transformative journey at ‘Startup Mahakumbh,’ a pioneering three-day event slated to unfold at Bharat Mandapam, Pragati Maidan, New Delhi.
+
+            Supported by industry stakeholders and organisations including the National Association of Software and Service Companies (NASSCOM), Indian Venture and Alternate Capital Association (IVCA), TiE Global, Bootstrap Foundation, Department for Promotion of Industry and Internal Trade (DPIIT), Invest India, Startup India, and the National Startup Advisory Council under the Ministry of Education, ‘Startup Mahakumbh’ promises to be a gathering like no other.
+        </p>
+    </section>
+
+    <!-- Image Gallery with Advanced Interactions -->
+    <section class="image-gallery">
+        <div class="image-card" style="--index: 0;">
+            <img src="ceed_1.jpg" alt="Lush Green Campus">
+            <div class="caption">CEED interior front photo.</div>
+        </div>
+        <div class="image-card" style="--index: 1;">
+            <img src="ceed_2.jpg" alt="Beautiful Pathways">
+            <div class="caption">Some photo of CEED inside.</div>
+        </div>
+        <div class="image-card" style="--index: 2;">
+            <img src="ceed_3.jpg" alt="Flower Beds">
+            <div class="caption">Some photo of CEED inside.</div>
+        </div>
+        <div class="image-card" style="--index: 3;">
+            <img src="ceed_4.jpg" alt="Garden Pond">
+            <div class="caption">Some photo of CEED inside.</div>
+        </div>
+        <div class="image-card" style="--index: 4;">
+            <img src="ceed_5.jpg" alt="Open Spaces">
+            <div class="caption">Some photos are from outside CEED.</div>
+        </div>
+        <div class="image-card" style="--index: 5;">
+            <img src="ceed_6.jpg" alt="Research Area">
+            <div class="caption">Some photos are from outside CEED.</div>
+        </div>
+        <!-- <div class="image-card" style="--index: 6;">
+            <img src="WhatsApp Image 2024-11-26 at 16.57.24_704b8dab.jpg" alt="Sunlit Corners">
+            <div class="caption">Sunlit corners perfect for nature enthusiasts.</div>
+        </div>
+        <div class="image-card" style="--index: 7;">
+            <img src="WhatsApp Image 2024-11-26 at 16.57.13_3a6c3804.jpg" alt="Garden Pond">
+            <div class="caption">A peaceful pond surrounded by greenery.</div>
+        </div>
+        <div class="image-card" style="--index: 8;">
+            <img src="WhatsApp Image 2024-11-26 at 16.57.19_024c33db.jpg" alt="Open Spaces">
+            <div class="caption">Open spaces for relaxation and meditation.</div>
+        </div> -->
+    </section>
+
+    <script>
+        // Interactive background movement
+        document.addEventListener('mousemove', function(e) {
+            const body = document.body;
+            const moveX = (e.clientX * -1 / 50);
+            const moveY = (e.clientY * -1 / 50);
+            body.style.backgroundPosition = `${moveX}px ${moveY}px`;
+        });
+
+        // Add 3D tilt effect to image cards
+        const imageCards = document.querySelectorAll('.image-card');
+        imageCards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const angleX = (e.clientY - centerY) / 20;
+                const angleY = -(e.clientX - centerX) / 20;
+                
+                card.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) scale(1.05)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

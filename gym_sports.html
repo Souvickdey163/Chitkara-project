@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>University Sports Complex</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+        /* Header */
+        header {
+            background: #002b5c;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideInFromTop 1s ease-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .navbar {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .navbar a:hover {
+            color: #ff6200;
+            text-shadow: 0 0 5px #ff6200, 0 0 10px #ff6200, 0 0 15px #ff6200;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://imgs.search.brave.com/2Ni6EU46ce_h7f2g-_hPxcZAvvEFMPsIun0ovbpKKbE/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA4Lzk5LzMyLzc4/LzM2MF9GXzg5OTMy/Nzg4OF9vY0VHb2ZQ/dmdDSnJrS1FRQjJV/UDdjME5lc3FjWnhC/bi5qcGc') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 8rem 1rem 6rem;
+            position: relative;
+            animation: fadeInHero 1.5s ease-out;
+            box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: slideInFromLeft 1s ease-out;
+            text-shadow: 0 2px 5px rgba(241, 218, 4, 0.87);
+            color:black ;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: slideInFromRight 1s ease-out;
+            text-shadow: 0 1px 3px rgba(238, 204, 11, 0.877);
+            color: black;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #ff6200;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            animation: bounceIn 1s ease-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: #ff8c00;
+            transform: scale(1.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Fade-in and Slide Animations */
+        @keyframes fadeInHero {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromTop {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            from { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Facilities Section */
+        .facilities {
+            padding: 4rem 0;
+            background: #f4f4f4;
+            animation: fadeInUp 1.5s ease-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .facilities h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #002b5c;
+            animation: fadeIn 1s ease-out;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .facilities-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .facility {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(30% - 2rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, box-shadow 0.3s ease-in-out;
+            animation: fadeInUp 1s ease-out, rotateIn 1s ease-out;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .gymmm{
+            height: 250px;
+        }
+
+        .facility img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            animation: scaleIn 1s ease-out;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .facility h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            color: #002b5c;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .facility p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .facility:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.95); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes rotateIn {
+            from { transform: rotate(-10deg); opacity: 0; }
+            to { transform: rotate(0); opacity: 1; }
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 0;
+            background: #f9f9f9;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #002b5c;
+            animation: fadeIn 1s ease-out;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(22% - 2rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out, pulse 1.5s infinite;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid #ff6200;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item .description {
+            padding: 1rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); }
+            100% { box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+        }
+
+        /* Footer */
+        footer {
+            background: #002b5c;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+          <li><a href="Home_page.html">Home</a></li>
+          <li><a href="gym_sports.html">Sports And Fitness</a></li>
+          <li><a href="Ceed.html">CEED</a></li>
+          <li><a href="herbal_garden.html">Botanical Garden</a></li>
+          <li><a href="Team_project.html">Mess</a></li>
+          <li><a href="events.html">Events</a></li>    
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="library.html">Library</a></li>  
+          <li><a href="Dispensary.html">Dispensary</a></li>
+          <li><a href="sculpture.html">Sculpture</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Welcome to the Heart of University Fitness And Sports Complex</h2>
+            <p>Explore state-of-the-art facilities and a thriving athletic community.</p>
+            <a href="#facilities" class="btn">Explore Facilities</a>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="facilities">
+        <div class="container">
+            <h2>Our Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility">
+                    <img src="basketboll.jpg" alt="Basketball Court">
+                    <h3>Basketball Court</h3>
+                    <p>Outdoor courts for professional annd recreational games.</p>
+                </div>
+                <div class="facility">
+                    <img src="sport1.jpg" alt="Sports">
+                    <h3>Badminton Court </h3>
+                    <p>Indoor courts for professional and recreational games.</p>
+                </div>
+                <div class="facility">
+                    <img src="gymmm.jpg" alt="Gym" class="gymmm">
+                    <h3>Fitness Gym</h3>
+                    <p>Modern gym with advanced equipment for every fitness goal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sports Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Sports Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="sport2.jpg" alt="Sports Image 1">
+                    <div class="description">
+                        <p>Exciting game moments captured at our facilities.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="sport6.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Exciting game moments captured at our facilities.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="sport4.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Exciting game moments captured at our facilities.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="sport5.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Exciting game moments captured at our facilities.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gym2.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>State-of-the-art gym facilities for all fitness.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gym3.jpg" alt="Sports Image 3">
+                    <div class="description">
+                        <p>State-of-the-art gym facilities for all fitness.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gym4.jpg" alt="Sports Image 4">
+                    <div class="description">
+                        <p>State-of-the-art gym facilities for all fitness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 University Sports Complex And Fitness. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

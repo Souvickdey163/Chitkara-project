@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chitkara University</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #f8f9fa;
+      color: #2d3436;
+      font-size: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Header Section */
+    header {
+      background:url('Chitkarasonai.jpg') ;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 64px;
+      font-weight: bold;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 20px;
+      font-weight: lighter;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+      line-height: 1.5;
+    }
+
+    .cta-button {
+      background-color: #1abc9c;
+      padding: 12px 30px;
+      font-size: 18px;
+      text-transform: uppercase;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #16a085;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+
+    /* Main Content Section */
+    .content-wrapper {
+      padding: 60px 20px;
+    }
+
+    .content-section {
+      margin-bottom: 60px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .content-text {
+      flex: 1;
+      margin-right: 20px;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .content-text h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .content-text p {
+      font-size: 18px;
+      color: #7f8c8d;
+    }
+
+    .content-image {
+      flex: 1;
+      max-width: 500px;
+      height: auto;
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .content-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+    }
+
+    .content-image:hover {
+      transform: scale(1.05);
+    }
+
+    /* Programs Section */
+    .programs {
+      background-color: #ecf0f1;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .programs h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: #34495e;
+    }
+
+    .program-card {
+      background-color: white;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .program-card h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .program-card p {
+      font-size: 16px;
+      color: #7f8c8d;
+    }
+
+    .testimonials {
+      background-color: #16a085;
+      color: black;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    .testimonials h2 {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    .testimonial {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin: 20px;
+      display: inline-block;
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial p {
+      font-size: 18px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .testimonial h3 {
+      font-size: 22px;
+      color: #34495e;
+    }
+
+    /* Contact Form */
+    .contact-form {
+      background-color: #ffffff;
+      padding: 60px 20px;
+      margin: 40px 0;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .contact-form h2 {
+      font-size: 36px;
+      color: #34495e;
+      margin-bottom: 30px;
+    }
+    .books{
+        height: 200px;
+        width: 240px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 80%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #34495e;
+    }
+
+    .contact-form button {
+      background-color: #1abc9c;
+      color: white;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #16a085;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #34495e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 16px;
+    }
+
+    footer a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .content-section {
+        flex-direction: column;
+      }
+
+      .programs .program-card {
+        margin: 10px;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+      }
+
+      nav ul {
+        flex-direction: column;
+      }
+
+      nav ul li {
+        margin-bottom: 10px;
+      }
+    }
+    .container {
+    width: 1200px;
+    margin:0px auto;
+    display: inline;
+    text-align: center;
+}
+.main-section {
+    width: 100%;
+    float: left;
+    padding:50px 0px 40px 0px;
+    /* font-style:italic; */
+
+}
+.heading {
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 1px solid #ff5722;
+    margin-bottom:25px;
+    color: #ff5722;
+}
+.about-us img {
+    width:24%;
+    float:left;
+}
+.about-us div {
+    width:70%;
+    margin-left:20px;
+    float:left;
+    line-height:35px;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Chitkara University</h1>
+    <p>Empowering the future with excellence in education, research, and innovation.</p>
+    <a href="#about" class="cta-button">Learn More</a>
+  </header>
+
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="Home_page.html">Home</a></li>
+      <li><a href="gym_sports.html">Sports And Fitness</a></li>
+      <li><a href="Ceed.html">CEED</a></li>
+      <li><a href="herbal_garden.html">Botanical Garden</a></li>
+      <li><a href="Team_project.html">Mess</a></li>
+      <li><a href="events.html">Events</a></li>     
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="Dispensary.html">Dispensary</a></li>
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="contact_us.html">Contact us</a></li>
+    </ul>
+  </nav>
+  <div class="main-section about-us">
+    <a href="https://www.chitkara.edu.in/dr-ashok-k-chitkara/"> <img src="Dr-Ashok-K-Chitkara.webp" > </a>
+     <div>
+        <h2 class="heading">About Our Chancellor of Chitkara University</h2>
+        <p class="style_11"><h4><pre>Education and Leadership
+       Chitkara has a remarkable educational background and has held various leadership positions. He has cleared the HSK Level-6,
+       the highest level Chinese language test designed for non-native speakers, with an impressive score of 196 out of 300.
+    </pre></p>
+    <p>DR ASHOK CHITKARA<br>
+       Chancellor, Chitkara University
+    </p>
+     </div>
+  </div>
+  <div class="main-section about-us">
+    <a href="https://www.chitkara.edu.in/dr-madhu-chitkara/"> <img src="Dr-Madhu-Chitkara.webp" > </a>
+    <div>
+       <h2 class="heading">About Our Pro-Chancellor of Chitkara University</h2>
+       <p class="style_11"><h4>  <pre>Education and Leadership
+         An academician and an edupreneur extraordinaire, Dr. Madhu Chitkara co-founded Chitkara Educational Trust in 1998,
+         with a vision to impart quality education to seekers in the region.
+   </pre></p>
+   <p>DR MADHU CHITKARA<br>
+    Pro-Chancellor, Chitkara University
+ </p>
+     </div>
+  </div>
+
+
+  <!-- Home Section -->
+  <div class="content-wrapper">
+    <div class="content-section" id="about">
+      <div class="content-text">
+        <h2>Welcome to Chitkara University</h2>
+        <p>Chitkara University is one of India's leading universities, offering world-class education and research opportunities. With cutting-edge infrastructure and a holistic approach to education, we nurture students to become future leaders.</p>
+      </div>
+      <div class="content-image">
+        <img src="photo___5.jpg" alt="University Campus">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content-section" id="about">
+      <div class="content-text">
+        <h2>Welcome to Chitkara University</h2>
+        <p>Chitkara University is one of India's leading universities, offering world-class education and research opportunities. With cutting-edge infrastructure and a holistic approach to education, we nurture students to become future leaders.</p>
+      </div>
+      <div class="content-image">
+        <img src="photo___5.jpg" alt="University Campus">
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="content-section" id="about">
+      <div class="content-text">
+        <h2>Our Tag Line</h2>
+        <p>Self-awareness: Recognizing one’s strengths, weaknesses, goals, and aspirations. This involves introspection, feedback from others, and a willingness to challenge oneself.<br>
+          Career exploration: Investigating various career options, analyzing their potential, and identifying the activities essential for success in a desired role. This includes developing a plan to excel in those activities.<br>
+          Character and leadership: Demonstrating character by putting the interests of others ahead of one’s own and being willing to make decisions that benefit the organization as a whole. Leadership involves speaking up, even when expressing unpopular views, and being open to feedback and growth.
+          
+        </p>
+      </div>
+      <div class="content-image">
+        <img src="explore.jpg" alt="University Campus">
+      </div>
+    </div>
+  </div>
+
+  <!-- Academics Section -->
+  <div class="content-wrapper" id="research">
+    <div class="content-section">
+      <div class="content-text">
+        <h2>Research at Chitkara University</h2>
+        <p>Our research initiatives are driving innovation in various fields including engineering, healthcare, and business. With state-of-the-art labs and global collaborations, we aim to solve real-world problems.</p>
+      </div>
+      <div class="content-image">
+        <img src="photo20.jpg" alt="Research Lab">
+      </div>
+    </div>
+  </div>
+  <!-- Facilities Section -->
+  <div class="programs" id="programs">
+    <h2>Our Programs</h2>
+    <div class="program-card">
+      <h3>Undergraduate Programs</h3>
+      <p>Explore a wide range of undergraduate programs in engineering, business, design, and more.</p>
+    </div>
+    <div class="program-card">
+      <h3>Postgraduate Programs</h3>
+      <p>Advance your career with our postgraduate programs that emphasize research and innovation.</p>
+    </div>
+    <div class="program-card">
+      <h3>Doctoral Programs</h3>
+      <p>Our doctoral programs allow you to conduct cutting-edge research and contribute to global knowledge.</p>
+    </div>
+  </div>
+
+
+  <!-- Events&Clubs Section -->
+  <div class="testimonials" id="testimonials">
+    <h2>Our Library And Lab</h2>
+    <div class="testimonial">
+      <a href="library.htmla"><img src="library.jpg" url(Books_library.jpg) class="books"></a> 
+      <h3 href="#library">Library</h3>
+    </div>
+    <div class="testimonial">
+      <a href="labs.html"><img src="mekarslab.jpg" url(mekarslab.jpg) class="books"></a>
+      <h3>Labs</h3>
+    </div>
+  </div>
+
+  <!-- Contact Form Section -->
+   <section id="Contact_us">
+  <div class="contact-form" id="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required><br>
+      <input type="email" placeholder="Your Email" required><br>
+      <textarea placeholder="Your Message" rows="5" required></textarea><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Chitkara University. All Rights Reserved.</p>
+    <p>Follow us: <a href="https://www.facebook.com/ChitkaraUHP/">Facebook</a> | <a href="#">Twitter</a> | <a href="//www.instagram.com/chitkarau/">Instagram</a></p>
+  </footer>
+
+</body>
+</html>

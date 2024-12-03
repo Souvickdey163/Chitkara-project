@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Website</title>
+  <style>
+    /* General styles */
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        overflow-x: hidden;
+    }
+    
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+    
+    /* Hero section */
+    #hero {
+       background:  url('https://imgs.search.brave.com/_f4rr8w5t8zgQTtn06FSk5fXnS2xHdiPKnpcRAaXz-w/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA5LzE3LzQ4Lzg0/LzM2MF9GXzkxNzQ4/ODQ2N19XRVRzMzdE/TUVwTWVlYUd1WEtI/ZzRlaTkyNVNMbG5s/SS5qcGc') no-repeat center center/cover;
+        color: white;
+        text-align: center;
+        padding: 50px 20px;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 1;
+    }
+    
+    #hero * {
+        position: relative;
+        z-index: 2;
+    }
+    
+    #hero h2 {
+        font-size: 2.5rem;
+        margin: 0;
+        animation: fadeIn 2s ease;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    #hero .btn-explore {
+        background: #FFD700;
+        color: #333;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 20px;
+    }
+    
+    #hero .btn-explore:hover {
+        background: #ffbf00;
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    /* About section */
+    #about {
+        padding: 20px;
+        text-align: center;
+        perspective: 1000px;
+    }
+    
+    .image-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .image-gallery img {
+        width: 150px;
+        height: 100px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        opacity: 0.8;
+    }
+    
+    .image-gallery img:hover {
+        transform: scale(1.1) rotateY(10deg);
+        opacity: 1;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    
+    /* Catalog section */
+    #catalog {
+        background: #f4f4f4;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .card {
+        background: white;
+        margin: 10px;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: inline-block;
+        transition: all 0.3s ease;
+        transform: perspective(500px) rotateX(10deg);
+        opacity: 0.9;
+    }
+    
+    .card:hover {
+        transform: translateY(-15px) scale(1.05) rotateX(0);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        opacity: 1;
+    }
+    
+    /* Contact section */
+    #contact {
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(135deg, #6C63FF 0%, #5754d3 100%);
+        color: white;
+    }
+    
+    form {
+        max-width: 500px;
+        margin: auto;
+        background: rgba(255,255,255,0.1);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    
+    form input, form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+    
+    form input:focus, form textarea:focus {
+        outline: none;
+        border-color: #FFD700;
+        box-shadow: 0 0 10px rgba(255,215,0,0.3);
+    }
+    
+    form button {
+        background: #FFD700;
+        color: #333;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    form button:hover {
+        background: white;
+        color: #6C63FF;
+        transform: translateY(-3px);
+    }
+    
+    /* Footer */
+    footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        transition: background 0.3s ease;
+    }
+    
+    footer:hover {
+        background: #444;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeInNav {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 10%;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+            transform-style: preserve-3d;
+            animation: fadeIn 1.5s ease-out forwards;
+            animation-delay: calc(1s + var(--index) * 0.3s);
+        }
+
+        .image-card:hover {
+            transform: scale(1.05) rotateX(10deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            transform-origin: center;
+        }
+
+        .image-card:hover img {
+            transform: scale(1.1) rotate(3deg);
+            filter: brightness(110%) contrast(110%);
+        }
+
+        .image-card .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+            font-size: 1em;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.5s ease;
+        }
+
+        .image-card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+  </style>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href="Home_page.html">Home</a></li>
+          <li><a href="gym_sports.html">Sports And Fitness</a></li>
+          <li><a href="Ceed.html">CEED</a></li>
+          <li><a href="herbal_garden.html">Botanical Garden</a></li>
+          <li><a href="Team_project.html">Mess</a></li>
+          <li><a href="events.html">Events</a></li>    
+          <li><a href="labs.html">Labs</a></li>
+          <li><a href="library.html">Library</a></li>  
+          <li><a href="Dispensary.html">Dispensary</a></li>
+          <li><a href="sculpture.html">Sculpture</a></li>
+          <li><a href="contact_us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+
+  <section id="hero">
+    <h2>Welcome to the Chitkara University Library</h2>
+    <p>Explore thousands of books, articles, and more!</p>
+    <button class="btn-explore">Explore Now</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Our library offers a diverse collection of resources for readers of all ages.</p>
+    <!-- <div class="image-gallery">
+      <img src="library3.jpg" alt="Library Interior">
+      <img src="library1.jpg" alt="Bookshelf">
+      <img src="library2.jpg" alt="Reading Room">
+    </div> -->
+  </section>
+
+  <section class="image-gallery">
+    <div class="image-card" style="--index: 0;">
+        <img src="library3.jpg" alt="Lush Green Campus">
+        <div class="caption">Bookshelf.</div>
+    </div>
+    <div class="image-card" style="--index: 1;">
+        <img src="library2.jpg" alt="Beautiful Pathways">
+        <div class="caption">Reading Place.</div>
+    </div>
+    <div class="image-card" style="--index: 2;">
+        <img src="library6.jpg" alt="Flower Beds">
+        <div class="caption">Some Photos Inside Our Library.</div>
+    </div>
+    <div class="image-card" style="--index: 3;">
+        <img src="library4.jpg" alt="Garden Pond">
+        <div class="caption">Some Photos Inside Our Library.</div>
+    </div>
+    <div class="image-card" style="--index: 4;">
+        <img src="library1.jpg" alt="Open Spaces">
+        <div class="caption">Bookshelf And Reading Place.</div>
+    </div>
+    <div class="image-card" style="--index: 5;">
+        <img src="library5.jpg" alt="Research Area">
+        <div class="caption">Some Photos Inside Our Library.</div>
+    </div>
+    </section>
+
+  <section id="catalog">
+    <h2>Our Catalog</h2>
+    <div class="card">
+      <h3>Fiction</h3>
+      <p>Dive into imaginative stories and novels.</p>
+    </div>
+    <div class="card">
+      <h3>Non-fiction</h3>
+      <p>Learn from biographies, essays, and documentaries.</p>
+    </div>
+    <div class="card">
+      <h3>Magazines</h3>
+      <p>Stay updated with our curated selection of magazines.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Have questions? Reach out to us anytime!</p>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Chitkara Universityn Library. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

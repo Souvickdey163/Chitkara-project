@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <style>
+    /* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('https://imgs.search.brave.com/0r7yeiBoE1aOH7I0x9l56fjuz9tgJSPcx9be0h_JnJY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9pbWFnZS1iYXJi/ZWxsLWd5bS1jb25j/ZXB0LXNwb3J0LWhl/YWx0aHktbGlmZXN0/eWxlXzE2Nzg2Mi05/MS5qcGc_c2VtdD1h/aXNfaHlicmlk') no-repeat center center/cover;
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header {
+  background: url('https://imgs.search.brave.com/1hU8KdlQMwuERkA4kaxvkM8vITjVwMXZvwMNyCfP-FA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAzLzY2LzkxLzg2/LzM2MF9GXzM2Njkx/ODY2OF94ZkFwdzND/MGpGYjR6djRjTVhk/NjFQaVVPWWJiTE5q/OC5qcGc') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  animation: slideInLeft 1s ease-out;
+}
+
+header p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Main container */
+.contact-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  animation: bounceIn 1.2s ease-in-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+.form-group:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.form-group:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.form-group:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #6C63FF;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.5);
+  outline: none;
+}
+
+.submit-btn {
+  background: #6C63FF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.submit-btn:hover {
+  background: #5754d3;
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .contact-container {
+    padding: 15px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you! Feel free to reach out using the form below.</p>
+  </header>
+
+  <main>
+    <section class="contact-container">
+      <form class="contact-form">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your Website Name. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

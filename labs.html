@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Labs</title>
+  <style>
+    /* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scrolling due to animations */
+}
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+
+
+/* Header Styles */
+header {
+  background:url('https://imgs.search.brave.com/YPI24cd2sWlWA9Z4zDteCLZ5Fu2q9r73QWLzKvKtiqg/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9h/YnN0cmFjdC1kaWdp/dGFsLWdyaWQtYmxh/Y2stYmFja2dyb3Vu/ZF81Mzg3Ni05NzY0/Ny5qcGc_c2VtdD1h/aXNfaHlicmlk');
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 3rem;
+  animation: fadeInDown 1.5s ease-in-out;
+}
+
+.header-content p {
+  font-size: 1.5rem;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Section Headers */
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  position: relative;
+  display: inline-block;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #4e54c8;
+  margin: 10px auto;
+  animation: growWidth 1s ease-in-out;
+}
+
+/* Lab Section */
+.labs {
+  padding: 40px 20px;
+  background: #f4f4f4;
+}
+
+.lab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.lab-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInScale 1s ease-in-out;
+}
+
+.lab-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.lab-card img {
+  width: 100%;
+  border-radius: 10px;
+  animation: slideInBottom 1s ease-in-out;
+}
+
+/* Photo Gallery Section */
+.gallery {
+  padding: 40px 20px;
+  background: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: zoomIn 1s ease-in-out;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer Styles */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes growWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50px;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="Home_page.html">Home</a></li>
+      <li><a href="gym_sports.html">Sports And Fitness</a></li>
+      <li><a href="Ceed.html">CEED</a></li>
+      <li><a href="herbal_garden.html">Botanical Garden</a></li>
+      <li><a href="Team_project.html">Mess</a></li>
+      <li><a href="events.html">Events</a></li>    
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="library.html">Library</a></li>  
+      <li><a href="Dispensary.html">Dispensary</a></li>
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="contact_us.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <header>
+    <div class="header-content">
+      <h1>Welcome to Our Chitkara University Labs</h1>
+      <p>Explore our state-of-the-art facilities and resources</p>
+    </div>
+  </header>
+  
+  <main>
+    <!-- Lab Section -->
+    <section class="labs">
+      <h2>Our Labs</h2>
+      <div class="lab-grid">
+        <!-- Lab 1 -->
+        <div class="lab-card">
+          <img src="physics_lab.jpg" alt="Physics Lab">
+          <h3>Maker's Lab</h3>
+          <p>Equipped with modern tools for experimental physics.</p>
+        </div>
+        <!-- Lab 2 -->
+        <div class="lab-card">
+          <img src="lab2.jpg" alt="Chemistry Lab">
+          <h3>Chemistry Lab</h3>
+          <p>Comprehensive setup for chemical experiments and research.</p>
+        </div>
+        <!-- Lab 3 -->
+        <div class="lab-card">
+          <img src="computer_lab.jpg" alt="Computer Lab">
+          <h3>Computer Lab</h3>
+          <p>Advanced systems and software for computational learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-grid">
+        <img src="lab4.jpg" alt="Lab Photo 1">
+        <img src="lab3.jpg" alt="Lab Photo 2">
+        <img src="lab5.jpg" alt="Lab Photo 3">
+        <img src="physics_lab.jpg" alt="Lab Photo 4">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Your College Name. All rights reserved.</p>
+  </footer>
+</body>
+</html>

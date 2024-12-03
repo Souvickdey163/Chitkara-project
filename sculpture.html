@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sculpture Art</title>
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 2rem;
+    background:url('https://imgs.search.brave.com/j9oXsE5dFevYJr28UNlczxhB0T5eLs3twqjrFonl2rs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9hbnRp/cXVlLXN0YXR1ZS1i/YWNrZ3JvdW5kLTI3/MDA5NTgwLmpwZw');
+    background-size: cover;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+    /* Navbar */
+    nav {
+      background-color: teal;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 3px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 7px;
+      text-transform: uppercase;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #1abc9c;
+      border-bottom: 2px solid #1abc9c;
+    }
+
+
+/* Sections */
+section {
+    padding: 2rem;
+    margin: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-out;
+}
+
+       /* Gallery Section */
+       .gallery {
+            padding: 4rem 0;
+            background: #f9f9f9;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            color: #002b5c;
+            animation: fadeIn 1s ease-out;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 calc(22% - 2rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out, pulse 1.5s infinite;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 2px solid #ff6200;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item .description {
+            padding: 1rem;
+            background: #fff;
+            text-align: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="Home_page.html">Home</a></li>
+      <li><a href="gym_sports.html">Sports And Fitness</a></li>
+      <li><a href="Ceed.html">CEED</a></li>
+      <li><a href="herbal_garden.html">Botanical Garden</a></li>
+      <li><a href="Team_project.html">Mess</a></li>
+      <li><a href="events.html">Events</a></li>     
+      <li><a href="labs.html">Labs</a></li>
+      <li><a href="library.html">Library</a></li>
+      <li><a href="Dispensary.html">Dispensary</a></li>
+      <li><a href="sculpture.html">Sculpture</a></li>
+      <li><a href="contact_us.html">Contact us</a></li>
+    </ul>
+  </nav>
+    <header>
+        <h1>Sculpture In Chitkara University</h1>
+        <p>Explore the timeless beauty of sculptures.</p>
+    </header>
+    <section id="history">
+        <h2>History of Sculpture</h2>
+        <p>Sculpture is one of the oldest forms of artistic expression, tracing back to ancient civilizations.</p>
+    </section>
+    <!-- Sports Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Sculpture Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="Stathu1.jpg" alt="Sports Image 1">
+                    <div class="description">
+                        <p>Sir Chandrasekhara Venkata Raman Was an indian physicist.<br>1888 - 1970</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="gandhi.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Mohandas Karamchand Gandhi was an indian lower and anti-colonial nationalist.<br>1869 - 1948</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Stathu3.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Rabindarnath Tagore was a bengali poet writer, comnposer, painter.<br>1861 - 1941</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Stathu4.jpg" alt="Sports Image 2">
+                    <div class="description">
+                        <p>Srinivasa Ramanujan Aiyangar was an indian mathematician.<br>
+                            1887 - 1920
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: sculptureart@example.com</p>
+    </footer>
+</body>
+</html>

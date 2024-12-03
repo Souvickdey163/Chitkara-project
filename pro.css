@@ -1,0 +1,427 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+header {
+    position: relative;
+    width: 100%;
+    background: url('https://www.pinclipart.com/picdir/big/114-1144588_vector-nature-herbal-banner-royalty-free-stock-transparent.png') no-repeat center center/cover; /* Replace with your image path */
+    color: black;
+    background-size: cover contain auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Logo Positioning */
+.logo {
+    position: absolute;
+    top: 0px;
+    left:0px;
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+}
+
+    /* Navbar */
+    nav {
+        background-color: teal;
+        color: white;
+        padding: 15px 0;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+  
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+  
+      nav ul li {
+        margin: 0 3px;
+      }
+  
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 7px;
+        text-transform: uppercase;
+        transition: color 0.3s ease, border-bottom 0.3s ease;
+      }
+  
+      nav ul li a:hover {
+        color: #1abc9c;
+        border-bottom: 2px solid #1abc9c;
+      }
+
+/* Header Content Styling */
+.header-content {
+    text-align: center;
+    margin-top: 60px; /* Ensure it appears below the nav */
+}
+
+.header-content h1 {
+    font-size: 36px;
+    /* text-shadow: 2px 2px 0 #444, 4px 4px 0 #222, 6px 6px 0 #000; */
+}
+
+.header-content p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Navbar Height Management */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0;
+}
+
+
+
+
+/* Herb section styling */
+.herb-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.herb-item:hover {
+    transform: scale(1.05);
+}
+
+.herb-img {
+    max-width: 200px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.herb-img:hover {
+    transform: scale(1.1);
+}
+
+.herb-description {
+    max-width: 600px;
+}
+
+.herb-description ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.herb-description a {
+    color: #2a7d61;
+    text-decoration: none;
+}
+
+.herb-description a:hover {
+    text-decoration: underline;
+}
+/* /about sections/ */
+/* About Section Styling */
+#about {
+    padding: 40px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+}
+
+/* Section Title */
+#about h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #2e7d32; /* Herbal green color */
+    margin-bottom: 20px;
+}
+
+/* Subheadings */
+#about h3 {
+    font-size: 24px;
+    color: #1b5e20;
+    margin-top: 30px;
+}
+
+/* Paragraphs */
+#about p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* List Styling */
+#about ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    color: #4caf50;
+}
+
+#about ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Add Some Hover Effect to Text */
+#about ul li:hover {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Add Spacing */
+#about {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+ /* Privacy Policy Section Styling */
+#privacy-policy {
+    padding: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+#privacy-policy h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #2e7d32; /* Herbal green color */
+    margin-bottom: 20px;
+}
+
+/* Subheadings Styling */
+#privacy-policy h3 {
+    font-size: 24px;
+    color: #388e3c; /* Slightly darker green */
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+#privacy-policy p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Add Bullet Points for List Items */
+#privacy-policy ul {
+    list-style-type: disc;
+    margin-left: 40px;
+    color: #4caf50;
+}
+
+#privacy-policy ul li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Highlighting Hover Effect for Subheadings */
+#privacy-policy h3:hover {
+    color: #1b5e20;
+    font-weight: bold;
+}
+
+/* Light Border and Spacing for Section */
+#privacy-policy {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Section Styling */
+#contact {
+    padding: 40px;
+    background-color: #fafafa; /* Light grey background */
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title */
+#contact h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    color: #388e3c; /* Green color to match theme */
+    margin-bottom: 30px;
+}
+
+/* Address Styling */
+#contact address {
+    font-style: normal; /* Remove italic style for better readability */
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#contact address p {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+#contact address u {
+    text-decoration: underline; /* Keep underline for emphasis */
+}
+
+/* Link Styling for Email and Mobile */
+#contact a {
+    color: #388e3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+}
+
+/* Spacing and Alignment */
+#contact p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Contact Info section styling */
+#contact p a {
+    font-weight: normal;
+}
+
+/* Box-shadow and Border for the Section */
+#contact {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Footer styling */
+footer {
+    background-color: #0a0956;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .footer-apps a {
+    margin: 0 10px;
+}
+
+footer .footer-apps img {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    transition: opacity 0.3s ease;
+}
+
+footer .footer-apps img:hover {
+    opacity: 0.7;
+}
+
+/* Marquee effect for scrolling text */
+.marquee p {
+    margin: 0;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .herb-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .herb-img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/* /------------/ */
+/* General Styling for the Section */
+.herb-gallery-section {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.gallery-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout for Images */
+.herb-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    justify-items: center;
+}
+
+/* Style for Each Image Item */
+.herb-image_item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.herb-image_item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect for Images */
+.herb-image_item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.herb-image_item:hover img {
+    transform: scale(1.1);
+}
